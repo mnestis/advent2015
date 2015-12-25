@@ -1,15 +1,17 @@
 #!/usr/bin/python
 
-def do_thing(input_string):
+def calculate_code(x, y):
 
-    for line in input_string.split("\n"):
-        if line == "":
-            continue
+    number = 20151125
 
-        pass
+    for x in range(1, sum(range(1, x + y - 1)) + x):
+        number = (number * 252533) % 33554393
+
+    return number
 
 if __name__=="__main__":
+    
+    x = 3029
+    y = 2947
 
-    input_string = open("input.txt").read()
-
-    print do_thing(input_string)
+    print calculate_code(x, y)
